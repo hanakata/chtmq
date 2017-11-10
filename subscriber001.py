@@ -11,7 +11,6 @@ def on_connect(client, userdata, flags, respons_code):
     client.subscribe(topic, qos = _qos)
 
 def on_message(client, userdata, msg):
-#    print(msg.topic + ' ' + str(msg.payload))
     user = msg.topic.split('/')
     d = datetime.datetime.today()
     reception_time = '%s:%s:%s' % (d.hour, d.minute, d.second)

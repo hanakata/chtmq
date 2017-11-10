@@ -21,7 +21,6 @@ def on_connect(client, userdata, flags, respons_code):
     client.subscribe(topic, qos = _qos)
 
 def on_message(client, userdata, msg):
-#    print(msg.topic + ' ' + str(msg.payload))
     d = datetime.datetime.today()
     reception_time = '%s:%s:%s' % (d.hour, d.minute, d.second)
     print(reception_time + ' ' + str(msg.payload))
@@ -33,10 +32,3 @@ if __name__ == '__main__':
     while True:
         message = input('>>>  ')
         on_publish(message)
-
-
-
-
-        
-
-#        client.loop_forever()
