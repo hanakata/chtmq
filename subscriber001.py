@@ -1,6 +1,5 @@
 import paho.mqtt.client as mqtt
 import datetime
-import locale
 
 host = '127.0.0.1'
 port = 1883

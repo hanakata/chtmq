@@ -1,11 +1,16 @@
-from time import sleep
 import paho.mqtt.client as mqtt
 import sys
 import datetime
+import subprocess
+
+username = input('input username:')
+
+subscriber_run = 'C:\git\chtmq\subscriber001.py'
+subprocess.run(subscriber_run, shell=True)
 
 host = '127.0.0.1'
 port = 1883
-topic = '00001/local/shara'
+topic = '00001/local/' + username
 _qos = 1
 retain = 0
 message = sys.argv
